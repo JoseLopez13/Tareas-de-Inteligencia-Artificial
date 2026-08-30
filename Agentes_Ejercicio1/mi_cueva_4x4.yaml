@@ -1,0 +1,19 @@
+grid:
+  width: 4
+  height: 4
+
+agent:
+  start: [1, 1]
+  direction: east
+  arrows: 1
+
+# El wumpus lo pse en la esquina superior izquierda 
+wumpus: [1, 4]
+
+# Los 2 pits los movi en direcciones diferentes 
+pits:
+  - [2, 4]
+  - [4, 2]
+
+# El oro lo puse en una ubicacion nueva y lograble 
+gold: [4, 3]
