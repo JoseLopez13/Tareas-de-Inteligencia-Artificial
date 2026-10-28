@@ -19,7 +19,7 @@ print(f"alpha={alpha}, gamma={gamma}, epsilon={epsilon}, episodes={episodes}, se
 # Estados: 4 filas x 12 columnas. Acciones: 4 (0:N, 1:E, 2:S, 3:W)
 q_table = np.zeros((4, 12, 4))
 actions_map = {0: (-1, 0), 1: (0, 1), 2: (1, 0), 3: (0, -1)}
-action_symbols = ['N', 'E', 'S', 'W'] # Letras en lugar de flechas
+action_symbols = ['N', 'E', 'S', 'W'] # Letras 
 
 def step(state, action):
     r, c = state
@@ -90,7 +90,7 @@ for _ in range(50):
     if done:
         break
 
-# 5. Formateo de salida en Consola (Estilo Diego)
+# 5. Salida de la consola.
 policy_grid = np.full((4, 12), '·', dtype=object)
 for r in range(4):
     for c in range(12):
@@ -117,7 +117,7 @@ print(f"Greedy return (epsilon=0): {greedy_reward}")
 mean_training_return = np.mean(rewards_per_episode)
 print(f"Mean training return (epsilon=0.1): {mean_training_return:.2f}")
 
-# 6. Guardar datos en CSV (Requisito extra)
+# 6. Guardar datos en CSV 
 csv_filename = os.path.join(os.getcwd(), 'episode_returns.csv')
 df = pd.DataFrame({'Reward': rewards_per_episode})
 df.to_csv(csv_filename, index=False)
